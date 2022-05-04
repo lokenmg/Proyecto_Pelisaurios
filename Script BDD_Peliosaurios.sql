@@ -46,3 +46,37 @@ CREATE TABLE genero(
 	ID_pelicula SMALLINT NOT NULL,
 	PRIMARY KEY(ID_lenguaje)
 )
+
+CREATE TABLE pago (
+	id_pago SMALLINT NOT NULL AUTO_INCREMENT ,
+	id_transaccion INT(10) NOT NULL ,
+	Pasarela_pago INT(20) NOT NULL , 
+	Fecha_pago DATE NOT NULL , 
+	Hora_pago TIME NOT NULL , 
+	monto DOUBLE NOT NULL ,
+	id_usuario SMALLINT NOT NULL , 
+	id_pelicula SMALLINT NOT NULL, 
+	PRIMARY KEY (id_pago)
+ );
+ 
+ CREATE TABLE pago_usuario(
+	id_pago SMALLINT NOT NULL,
+	id_usuario SMALLINT NOT NULL
+ );
+ 
+	 CREATE TABLE usuarios(
+		nombre VARCHAR(25) NOT NULL,
+		apellido_Materno  VARCHAR(25) NOT NULL,
+		apellido_paterno  VARCHAR(25) NOT NULL,
+		ID_usuario SMALLINT NOT NULL AUTO_INCREMENT,
+		Email VARCHAR(40) NOT NULL,
+		contraseña varchar(15) not null,
+		fecha_nac DATE not null,
+		PRIMARY KEY(id_usuario)
+		);
+
+ 
+ CREATE TABLE Usuario_Rventa(
+	id_Venta SMALLINT NOT NULL,
+	id_usuario SMALLINT NOT NULL
+    );
